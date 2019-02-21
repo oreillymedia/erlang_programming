@@ -107,7 +107,7 @@ delete_usr(CustId) ->
 
 %% @spec set_service(integer(), service(), bool()) -> ok | {error, instTime()}
 
--spec(set_service(integer(), service(), bool()) -> ok | {error, instTime()}).
+-spec(set_service(integer(), service(), boolean()) -> ok | {error, instTime()}).
 
 set_service(CustId, Service, Flag) ->
     call({set_service, CustId, Service, Flag}).
@@ -162,7 +162,7 @@ lookup_msisdn(PhoneNo) ->
 
 %% @spec service_flag(integer(), service()) -> bool() | {error, instance | disabled}
 
--spec(service_flag(integer(), service()) -> bool() | {error, instance | disabled}). 
+-spec(service_flag(integer(), service()) -> boolean() | {error, instance | disabled}). 
 
 service_flag(PhoneNo, Service) ->
     case usr_db:lookup_msisdn(PhoneNo) of
